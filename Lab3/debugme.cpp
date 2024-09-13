@@ -4,7 +4,7 @@
  * Dongeun Kim
  * dongeunk
  *
- * EECS 183:Lab 2
+ * EECS 183:Lab 3
  * Debugging the Code
  *
  * We are practicing the usage of the debugging tool provided by XCode. By doing so, we can properly discover where the error is happening, and fix it accordingly. This way, it is more efficient then having millions of cout statements at each line we want to test.
