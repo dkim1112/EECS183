@@ -2,8 +2,8 @@
  * rps.cpp
  * Project UID 24b93ce4a6274610f4c3f3e31fe17277c
  *
- * <#Name#>
- * <#Uniqname#>
+ * Dongeun Kim
+ * dongeunk
  *
  * EECS 183: Project 2
  * Fall 2024
@@ -99,7 +99,6 @@ void rps();
  */
 string getName(int playerNumber);
 
-
 /**
  * Requires: nothing
  * Modifies: cout, cin
@@ -114,7 +113,6 @@ string getName(int playerNumber);
  */
 int getMenuChoice();
 
-
 /**
  * Requires: nothing
  * Modifies: nothing
@@ -122,7 +120,6 @@ int getMenuChoice();
  *           one of 'R', 'r', 'P', 'p', 'S', 's'. Returns false otherwise.
  */
 bool isMoveGood(char move);
-
 
 /**
  * Requires: playerName is the name of the player being prompted for their
@@ -139,21 +136,12 @@ bool isMoveGood(char move);
  */
 char getMove(string playerName);
 
-
 /**
  * Requires: move is the move of the player being checked for a win.
  *           opponentMove is the move of the opponent.
  *           both move and opponentMove are valid moves.
  * Modifies: nothing
- * Effects:  Returns true if and only if the player who made move won
- *           according to the rules to rock-paper-scissors. Returns false
- *           otherwise.
- */
-bool isRoundWinner(char move, char opponentMove);
-
-
-/**
- * Requires: winnerName is the name of the player who won the round.
+ * Effects:  Returns true if and only if the player who made move won>
  * Modifies: cout
  * Effects:  If winnerName is the empty string, i.e., "",
  *           prints a message indicating the round is a draw. 
@@ -163,7 +151,6 @@ bool isRoundWinner(char move, char opponentMove);
  *           [winner_name] wins the round!
  */
 void announceRoundWinner(string winnerName);
-
 
 /**
  * Requires: p1Name and p2Name are the names of the respective players
@@ -177,7 +164,6 @@ void announceRoundWinner(string winnerName);
  */
 int doRound(string p1Name, string p2Name);
 
-
 /**
  * Requires: winnerName is the name of the player who won the game.
  * Modifies: cout
@@ -190,7 +176,6 @@ int doRound(string p1Name, string p2Name);
  *           You won EECS 183 Rock-Paper-Scissors!
  */
 void announceWinner(string winnerName);
-
 
 /**
  * Requires: p1Name and p2Name are the names of the respective players,
@@ -224,88 +209,214 @@ string doGame(string p1Name, string p2Name, int gameType);
 //************************************************************************
 
 void rps() {
-    // TODO: implement
+    printInitialHeader();
+    
+    // Get player names
+    string player1 = getName(1);
+    string player2 = getName(2);
 
-    return;
+    int menuChoice = 0;
+
+    // Get the menu choice initially
+    menuChoice = getMenuChoice();
+
+    // Continue playing until the user chooses to quit
+    while (menuChoice != 3) {
+        // Play the game and announce the winner
+        string winner = doGame(player1, player2, menuChoice);
+        announceWinner(winner);
+
+        // Get the menu choice again for the next round
+        menuChoice = getMenuChoice();
+    }
+
+    // Print the closing message
+    printCloser();
 }
 
 string getName(int playerNumber) {
-    // TODO: implement
+    string playerNameOne;
+    string playerNameTwo;
 
-    // NOTE: return "" to avoid compile error
-    //       remove it after implementing
-    return "";
+    if (playerNumber == 1) {
+        cout << "Player 1, enter your name: " << endl;
+        // To allow spaces between names.
+        std::getline(std::cin, playerNameOne);
+
+        if (playerNameOne == "") {
+            printErrorMessage(1);
+            playerNameOne = "Rocky";
+            return playerNameOne;
+        }
+        else {
+            return playerNameOne;
+        }
+    }
+    
+    // if playerNumber == 2 (the only other possible option)
+    else {
+        cout << "Player 2, enter your name: " << endl;
+        // To allow spaces between names.
+        std::getline(std::cin, playerNameTwo);
+
+        if (playerNameTwo == "") {
+            printErrorMessage(1);
+            playerNameTwo = "Creed";
+            return playerNameTwo;
+        }
+        else {
+            return playerNameTwo;
+        }
+    }
 }
 
 
 int getMenuChoice() {
-    // TODO: implement
-
-    // NOTE: return 0 to avoid compile error
-    //       remove it after implementing
-    return 0;
+    int userMenu;
+    
+    printMenu();
+    cin >> userMenu;
+    cout << endl;
+    
+    while (userMenu < 1 || userMenu > 3) {
+        cout << "Invalid menu choice" << endl;
+        printMenu();
+        cin >> userMenu;
+    }
+    return userMenu;
 }
 
-
 bool isMoveGood(char move) {
-    // TODO: implement
-
-    // NOTE: return false to avoid compile error
-    //       remove it after implementing
-    return false;
+    if ((move == 'r') || (move == 'p') || (move == 's')
+        || (move == 'R') || (move == 'P') || (move == 'S')) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 char getMove(string playerName) {
-    // TODO: implement
-
-    // NOTE: return 'r' to avoid compile error
-    //       remove it after implementing
-    return 'r';
+    char move;
+    cout << playerName << ", enter your move: ";
+    cin >> move;
+    
+    if (isMoveGood(move)) {
+        return move;
+    }
+    else {
+        // setting to default move
+        move = 'r';
+        printErrorMessage(2);
+    }
+    return move;
 }
-
 
 bool isRoundWinner(char move, char opponentMove) {
-    // TODO: implement
-
-    // NOTE: return false to avoid compile error
-    //       remove it after implementing
-    return false;
+    // assume true = winner is "move"
+    // assume false = winner is "opponentMove"
+    if (((move == 'r' || move == 'R') && (opponentMove == 's' || opponentMove == 'S'))
+        || ((move == 'p' || move == 'P') && (opponentMove == 'r' || opponentMove == 'R'))
+        || ((move == 's' || move == 'S') && (opponentMove == 'p' || opponentMove == 'P'))) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
-
 
 void announceRoundWinner(string winnerName) {
-    // TODO: implement
-    
-    return;
+    if (winnerName == "") {
+        cout << "This round is a draw!" << endl;
+    }
+    else {
+        cout << winnerName << " wins the round!" << endl;
+    }
 }
-
 
 int doRound(string p1Name, string p2Name) {
-    // TODO: implement
-
-    // NOTE: return 0 to avoid compile error
-    //       remove it after implementing
-    return 0;
+    char p1Move = getMove(p1Name);
+    char p2Move = getMove(p2Name);
+    
+    // To handle the exception cases where it doesn't detect a draw
+    // Due to the reason of characters mismatching on upper/lower case.
+    bool same;
+    if ((p1Move == 'r' && p2Move == 'R') || (p1Move == 'R' && p2Move == 'r')
+        || (p1Move == 's' && p2Move == 'S') || (p1Move == 'S' && p2Move == 's')
+        || (p1Move == 'p' && p2Move == 'P') || (p1Move == 'P' && p2Move == 'p')) {
+        same = true;
+    }
+    else {
+        same = false;
+    }
+    
+    // player 1 & player 2 ties
+    if ((p1Move == p2Move) || same) {
+        return 0;
+    }
+    // player 1 wins
+    else if (isRoundWinner(p1Move, p2Move)){
+        return 1;
+    }
+    // player 2 wins
+    else {
+        return 2;
+    }
 }
-
 
 void announceWinner(string winnerName) {
-    // TODO: implement
-    
-    return;
+    if (winnerName == "") {
+        cout << "No winner!" << endl;
+    }
+    else {
+        cout << "Congratulations " << winnerName << "!" << endl;
+        cout << "You won EECS 183 Rock-Paper-Scissors!" << endl;
+    }
 }
-
 
 string doGame(string p1Name, string p2Name, int gameType) {
-    // TODO: implement
+    if (gameType == 1) {
+        int p1WinCnt = 0;
+        int p2WinCnt = 0;
 
-    // NOTE: return "" to avoid compile error
-    //       remove it after implementing
-    return "";
+        for (int i=0; i<MAX_ROUNDS; ++i) {
+            string winnerName = "";
+            int roundResult = doRound(p1Name, p2Name);
+           
+            if (roundResult == 1) {
+                p1WinCnt++;
+                winnerName = p1Name;
+            }
+            else if (roundResult == 2) {
+                p2WinCnt++;
+                winnerName = p2Name;
+            }
+            else {
+                winnerName = "";
+            }
+            announceRoundWinner(winnerName);
+        }
+        
+        // Now returning the winner of the game as a whole, after 3 complete rounds.
+        if (p1WinCnt > p2WinCnt) {
+            return p1Name;
+        }
+        else if (p1WinCnt < p2WinCnt) {
+            return p2Name;
+        }
+        else {
+            return "";
+        }
+    }
+    
+    else if (gameType == 2) {
+        cout << "Under Construction" << endl;
+        return "";
+    }
+    else {
+        return "";
+    }
 }
-
-
-
 
 //***********************************************************************
 // DO NOT modify the four functions below.

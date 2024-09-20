@@ -2,8 +2,8 @@
  * test.cpp
  * Project UID 24b93ce4a6274610f4c3f3e31fe17277t
  *
- * <#Name#>
- * <#Uniqname#>
+ * Dongeun Kim
+ * dongeunk
  *
  * EECS 183: Project 2
  * Fall 2024
@@ -17,7 +17,6 @@
 #include <string>
 
 using namespace std;
-
 
 //************************************************************************
 // You should have implemented the following functions in rps.cpp
@@ -48,13 +47,32 @@ void test_isRoundWinner();
 void test_announceRoundWinner();
 void test_announceWinner();
 
+//************************************************************************
+// Testing additional function declarations, not for autograder.
+//************************************************************************
+void test_getName();
+void test_getMenuChoice();
+void test_getMove();
+void test_isRoundWinner();
+void test_announceRoundWinner();
+void test_doRound();
+void test_announceWinner();
 
 void startTests() {
-    cout << "\nExecuting your test cases\n";
+    cout << "\nExecuting your test cases\n" << endl;
 
+    // Graded ones for autograder.
     test_isMoveGood();
-    // TODO: call more test functions here
-
+    test_isRoundWinner();
+    test_announceRoundWinner();
+    test_announceWinner();
+    
+    // NEED TO TEST:
+    test_getName();
+    test_getMenuChoice();
+    // test_getMove();
+    // test_doRound();
+    
     return;
 }
 
@@ -69,30 +87,81 @@ void startTests() {
 //       * announceWinner()
 //************************************************************************
 
+// For boolean, true = 1 & false = 0.
 void test_isMoveGood() {
     cout << "Now testing function isMoveGood()\n";
+    cout << "Valid Inputs: " << endl;
     cout << "'r': Expected: 1, Actual: " << isMoveGood('r') << endl;
-    cout << "'q': Expected: 0, Actual: " << isMoveGood('q') << endl;
-
-    // TODO: implement more test cases here
-
+    cout << "'q': Expected: 0, Actual: " << isMoveGood('q') << endl << endl;
+    
+    cout << "Invalid Inputs: " << endl;
+    cout << "'1': Expected: 0, Actual: " << isMoveGood('1') << endl << endl;
     return;
 }
 
 void test_isRoundWinner() {
-    // TODO: implement
-
+    cout << "Now testing function isRoundWinner()" << endl;
+    cout << "Valid Inputs: " << endl;
+    cout << "Expected: 1, Actual: " << isRoundWinner('r', 's') << endl;
+    cout << "Expected: 1, Actual: " << isRoundWinner('p', 'R') << endl;
+    cout << "Expected: 1, Actual: " << isRoundWinner('S', 'p') << endl;
+    cout << "Expected: 0, Actual: " << isRoundWinner('r', 'p') << endl << endl;
+    
+    cout << "Invalid Inputs: " << endl;
+    cout << "Expected: 0, Actual: " << isRoundWinner('1', '2') << endl << endl;
     return;
 }
 
 void test_announceRoundWinner() {
-	// TODO: implement
-    
+    cout << "Now testing function announceRoundWinner()" << endl;
+    cout << "Valid Inputs: " << endl;
+    cout << "Expected: This round is a draw!, Actual: ";
+    announceRoundWinner("");
+    cout << "Expected: Daniel wins the round!, Actual: ";
+    announceRoundWinner("Daniel");
+    cout << endl;
+
+    cout << "Invalid Inputs: " << endl;
+    cout << "Anything can go in, as long it's a string type.";
     return;
 }
 
 void test_announceWinner() {
-	// TODO: implement
+    cout << "Now testing function announceWinner()" << endl;
+    cout << "Valid Inputs: " << endl;
+    cout << "Expected: No winner!, Actual: ";
+    announceWinner("");
+    cout << "Expected: Congratulations Daniel! You won EECS 183 Rock-Paper-Scissors!, Actual: ";
+    announceWinner("Daniel");
+    cout << endl;
 
+    cout << "Invalid Inputs: " << endl;
+    cout << "Anything can go in, as long it's a string type." << endl << endl;
+    return;
+}
+
+// ADDITIONAL
+void test_getName() {
+    cout << "Now testing function getName()\n";
+    cout << "Valid Inputs: " << endl;
+    cout << getName(1) << endl;
+    cout << getName(2) << endl << endl;
+
+    cout << "Invalid Inputs: " << endl;
+    cout << "An invalid input would be just pressing enter." << endl << endl;
+    return;
+}
+
+void test_getMenuChoice() {
+    cout << "Now testing function getMenuChoice()\n";
+    cout << "Valid Inputs: " << endl;
+    // good inputs would be 1, 2, or 3
+    cout << getMenuChoice() << endl;
+    cout << getMenuChoice() << endl;
+    cout << getMenuChoice() << endl << endl;
+
+    cout << "Invalid Inputs: " << endl;
+    // invalid input would be other numbers, like 5 or -1
+    cout << getMenuChoice() << endl;
     return;
 }

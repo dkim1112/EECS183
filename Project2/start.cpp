@@ -14,7 +14,6 @@
 #include <string>
 
 using namespace std;
-
 //************************************************************************
 // Function declarations. Function definitions are in rps.cpp and test.cpp
 //************************************************************************
