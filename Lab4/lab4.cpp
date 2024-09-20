@@ -1,8 +1,8 @@
 /**
  * lab4.cpp
  *
- * <#Name(s)#>
- * <#Uniqname(s)#>
+ * Dongeun Kim
+ * dongeunk
  *
  * EECS 183: Lab 4
  *
@@ -40,7 +40,6 @@ bool isMoveGood(char move);
  */
 void announceRoundWinner(string winnerName);
 
-
 //************************************************************************
 // Testing function declarations. Function definition is below main.
 //************************************************************************
@@ -51,8 +50,7 @@ int main() {
     cout << "\nExecuting your test cases\n";
 
     test_isMoveGood();
-    
-    // TODO: call more test functions here
+    test_announceRoundWinner();
 
     return 0;
 }
@@ -68,18 +66,26 @@ int main() {
 
 void test_isMoveGood() {
     cout << "Now testing function isMoveGood()\n";
+    cout << "Valid Inputs: " << endl;
     cout << "'r': Expected: 1, Actual: " << isMoveGood('r') << endl;
-
-    // TODO: implement more test cases here
-
+    cout << "'q': Expected: 0, Actual: " << isMoveGood('q') << endl << endl;
+    
+    cout << "Invalid Inputs: " << endl;
+    cout << "'1': Expected: 0, Actual: " << isMoveGood('1') << endl << endl;
     return;
 }
 
 void test_announceRoundWinner() {
-    cout << "Now testing function announceRoundWinner()\n";
-    
-	// TODO: implement test cases here
-    
+    cout << "Now testing function announceRoundWinner()" << endl;
+    cout << "Valid Inputs: " << endl;
+    cout << "Expected: This round is a draw!, Actual: ";
+    announceRoundWinner("");
+    cout << "Expected: Daniel wins the round!, Actual: ";
+    announceRoundWinner("Daniel");
+    cout << endl;
+
+    cout << "Invalid Inputs: " << endl;
+    cout << "Anything can go in, as long it's a string type.";
     return;
 }
 
