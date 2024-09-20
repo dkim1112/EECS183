@@ -68,10 +68,19 @@ void test_isMoveGood() {
     cout << "Now testing function isMoveGood()\n";
     cout << "Valid Inputs: " << endl;
     cout << "'r': Expected: 1, Actual: " << isMoveGood('r') << endl;
+    cout << "'p': Expected: 1, Actual: " << isMoveGood('p') << endl;
+    cout << "'s': Expected: 1, Actual: " << isMoveGood('s') << endl;
+    cout << "'R': Expected: 1, Actual: " << isMoveGood('R') << endl;
+    cout << "'O': Expected: 1, Actual: " << isMoveGood('O') << endl;
     cout << "'q': Expected: 0, Actual: " << isMoveGood('q') << endl << endl;
     
     cout << "Invalid Inputs: " << endl;
     cout << "'1': Expected: 0, Actual: " << isMoveGood('1') << endl << endl;
+    cout << "'.': Expected: 0, Actual: " << isMoveGood('.') << endl << endl;
+    cout << "'!': Expected: 0, Actual: " << isMoveGood('!') << endl << endl;
+    cout << "' ': Expected: 0, Actual: " << isMoveGood(' ') << endl << endl;
+    cout << "'@': Expected: 0, Actual: " << isMoveGood('@') << endl << endl;
+
     return;
 }
 
