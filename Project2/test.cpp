@@ -92,6 +92,7 @@ void test_isMoveGood() {
     cout << "Now testing function isMoveGood()\n";
     cout << "Valid Inputs: " << endl;
     cout << "'r': Expected: 1, Actual: " << isMoveGood('r') << endl;
+    cout << "'R': Expected: 1, Actual: " << isMoveGood('R') << endl;
     cout << "'q': Expected: 0, Actual: " << isMoveGood('q') << endl << endl;
     
     cout << "Invalid Inputs: " << endl;
