@@ -8,7 +8,9 @@
  * EECS 183: Project 2
  * Fall 2024
  *
- * <#description#>
+ * This program lets users play the rock paper scissor game. Through multiple functions such as checking whether if the user input is a valid move or not,
+ * or even just determining who wins the round, and who wins the game, it lets users to play the game with ease. It is a two player game, and each gets
+ * a turn to input their moves. The person who wins more out of the 3 round is the winner of the game. There are draws as well.
  */
 
 #include <iostream>
@@ -208,6 +210,8 @@ string doGame(string p1Name, string p2Name, int gameType);
 // Implement the functions below this line.
 //************************************************************************
 
+// This is the chunck of code that runs the rps game.
+// Entire outline of the rps game.
 void rps() {
     printInitialHeader();
     
@@ -215,6 +219,7 @@ void rps() {
     string player1 = getName(1);
     string player2 = getName(2);
 
+    // initially set the menu choice to 0.
     int menuChoice = 0;
 
     // Get the menu choice initially
@@ -222,8 +227,11 @@ void rps() {
 
     // Continue playing until the user chooses to quit
     while (menuChoice != 3) {
-        // Play the game and announce the winner
+        
+        // play the game.
         string winner = doGame(player1, player2, menuChoice);
+        
+        // announces winner.
         announceWinner(winner);
 
         // Get the menu choice again for the next round
