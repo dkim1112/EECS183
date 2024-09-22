@@ -8,9 +8,14 @@
  * EECS 183: Project 2
  * Fall 2024
  *
- * This program lets users play the rock paper scissor game. Through multiple functions such as checking whether if the user input is a valid move or not,
- * or even just determining who wins the round, and who wins the game, it lets users to play the game with ease. It is a two player game, and each gets
- * a turn to input their moves. The person who wins more out of the 3 round is the winner of the game. There are draws as well.
+ * This program lets users play the rock paper scissor game. 
+ * Through multiple functions such as checking whether
+ * if the user input is a valid move or not, or even just determining
+ * who wins the round, and who wins the game,
+ * it lets users to play the game with ease.
+ * It is a two player game, and each gets a turn to input their moves.
+ * The person who wins more out of the 3 round is the winner of the game.
+ * There are draws as well.
  */
 
 #include <iostream>
@@ -223,6 +228,7 @@ void rps() {
     int menuChoice = 0;
 
     // Get the menu choice initially
+    // This value is later sent to doGame method
     menuChoice = getMenuChoice();
 
     // Continue playing until the user chooses to quit
@@ -242,6 +248,7 @@ void rps() {
     printCloser();
 }
 
+// Getting the name of 2 users based on what they input.
 string getName(int playerNumber) {
     string playerNameOne;
     string playerNameTwo;
@@ -278,7 +285,9 @@ string getName(int playerNumber) {
     }
 }
 
-
+// While there are 3 menus available for the user
+// Check if the input is between 1~3
+// If it is, return their input values, else, notify
 int getMenuChoice() {
     int userMenu;
     
@@ -294,6 +303,7 @@ int getMenuChoice() {
     return userMenu;
 }
 
+// RPS can only contain r,p,s,R,P,S moves.
 bool isMoveGood(char move) {
     if ((move == 'r') || (move == 'p') || (move == 's')
         || (move == 'R') || (move == 'P') || (move == 'S')) {
@@ -304,11 +314,15 @@ bool isMoveGood(char move) {
     }
 }
 
+// Returning the move user has inputted.
+// It only returns their's if the input is valid.
+// Else, it assigns a default 'r' and prints an error message.
 char getMove(string playerName) {
     char move;
     cout << playerName << ", enter your move: ";
     cin >> move;
     
+    // Checking if the move is valid.
     if (isMoveGood(move)) {
         return move;
     }
@@ -320,19 +334,21 @@ char getMove(string playerName) {
     return move;
 }
 
+// Chances of all the winning scenarios in terms of "move" player
 bool isRoundWinner(char move, char opponentMove) {
-    // assume true = winner is "move"
-    // assume false = winner is "opponentMove"
+    // true = winner is "move" player
     if (((move == 'r' || move == 'R') && (opponentMove == 's' || opponentMove == 'S'))
         || ((move == 'p' || move == 'P') && (opponentMove == 'r' || opponentMove == 'R'))
         || ((move == 's' || move == 'S') && (opponentMove == 'p' || opponentMove == 'P'))) {
         return true;
     }
+    // false = winner is "opponentMove" player
     else {
         return false;
     }
 }
 
+// Displays the winner of each rps (1 turn for each).
 void announceRoundWinner(string winnerName) {
     if (winnerName == "") {
         cout << "This round is a draw!" << endl;
@@ -342,6 +358,7 @@ void announceRoundWinner(string winnerName) {
     }
 }
 
+// Determines the winner of each rps (1 turn for each).
 int doRound(string p1Name, string p2Name) {
     char p1Move = getMove(p1Name);
     char p2Move = getMove(p2Name);
@@ -372,7 +389,11 @@ int doRound(string p1Name, string p2Name) {
     }
 }
 
+// Announces the winner of the game, after 3 rounds
+// Need 2 wins out of 3 rounds to win.
 void announceWinner(string winnerName) {
+    // That means the method rps didn't return a string
+    // Meaning, the game ended as a draw.
     if (winnerName == "") {
         cout << "No winner!" << endl;
     }
@@ -382,6 +403,8 @@ void announceWinner(string winnerName) {
     }
 }
 
+// Returns the actual name of the winner to be displayed at last.
+// Also iterates for the MAX_ROUNDS (3) and repeats the game.
 string doGame(string p1Name, string p2Name, int gameType) {
     if (gameType == 1) {
         int p1WinCnt = 0;
@@ -402,10 +425,12 @@ string doGame(string p1Name, string p2Name, int gameType) {
             else {
                 winnerName = "";
             }
+            // This is for displaying the winner after each turn.
             announceRoundWinner(winnerName);
         }
         
         // Now returning the winner of the game as a whole, after 3 complete rounds.
+        // The names returned here goes to the rps method.
         if (p1WinCnt > p2WinCnt) {
             return p1Name;
         }
@@ -417,6 +442,7 @@ string doGame(string p1Name, string p2Name, int gameType) {
         }
     }
     
+    // This is the rps + lizard spock game.
     else if (gameType == 2) {
         cout << "Under Construction" << endl;
         return "";

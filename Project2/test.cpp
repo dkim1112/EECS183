@@ -67,11 +67,9 @@ void startTests() {
     test_announceRoundWinner();
     test_announceWinner();
     
-    // NEED TO TEST:
+    // ADDITIONAL TEST:
     test_getName();
     test_getMenuChoice();
-    // test_getMove();
-    // test_doRound();
     
     return;
 }
@@ -87,19 +85,29 @@ void startTests() {
 //       * announceWinner()
 //************************************************************************
 
-// For boolean, true = 1 & false = 0.
+// Testing the functionality of isMoveGood method
 void test_isMoveGood() {
     cout << "Now testing function isMoveGood()\n";
     cout << "Valid Inputs: " << endl;
+    // For boolean, true = 1 & false = 0.
     cout << "'r': Expected: 1, Actual: " << isMoveGood('r') << endl;
+    cout << "'p': Expected: 1, Actual: " << isMoveGood('p') << endl;
+    cout << "'s': Expected: 1, Actual: " << isMoveGood('s') << endl;
     cout << "'R': Expected: 1, Actual: " << isMoveGood('R') << endl;
+    cout << "'O': Expected: 1, Actual: " << isMoveGood('O') << endl;
     cout << "'q': Expected: 0, Actual: " << isMoveGood('q') << endl << endl;
     
     cout << "Invalid Inputs: " << endl;
     cout << "'1': Expected: 0, Actual: " << isMoveGood('1') << endl << endl;
+    cout << "'.': Expected: 0, Actual: " << isMoveGood('.') << endl << endl;
+    cout << "'!': Expected: 0, Actual: " << isMoveGood('!') << endl << endl;
+    cout << "' ': Expected: 0, Actual: " << isMoveGood(' ') << endl << endl;
+    cout << "'@': Expected: 0, Actual: " << isMoveGood('@') << endl << endl;
+
     return;
 }
 
+// Testing the functionality of isRoundWinner method
 void test_isRoundWinner() {
     cout << "Now testing function isRoundWinner()" << endl;
     cout << "Valid Inputs: " << endl;
@@ -113,6 +121,7 @@ void test_isRoundWinner() {
     return;
 }
 
+// Testing the functionality of announceRoundWinner method
 void test_announceRoundWinner() {
     cout << "Now testing function announceRoundWinner()" << endl;
     cout << "Valid Inputs: " << endl;
@@ -127,6 +136,7 @@ void test_announceRoundWinner() {
     return;
 }
 
+// Testing the functionality of announceWinner method
 void test_announceWinner() {
     cout << "Now testing function announceWinner()" << endl;
     cout << "Valid Inputs: " << endl;
@@ -141,7 +151,7 @@ void test_announceWinner() {
     return;
 }
 
-// ADDITIONAL
+// 2 methods below are ADDITIONAL.
 void test_getName() {
     cout << "Now testing function getName()\n";
     cout << "Valid Inputs: " << endl;
