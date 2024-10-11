@@ -41,7 +41,6 @@
 		7A2E3C962CB5D673002A139B /* vigenere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vigenere.cpp; sourceTree = "<group>"; };
 		7A2E3C972CB5D673002A139B /* polybius.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = polybius.cpp; sourceTree = "<group>"; };
 		7A2E3CA12CB8E468002A139B /* test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
-		7A2E3CA22CB8E468002A139B /* test.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = test.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +84,6 @@
 				7A2E3C962CB5D673002A139B /* vigenere.cpp */,
 				7A2E3C902CB5D673002A139B /* vigenere.h */,
 				7A2E3CA12CB8E468002A139B /* test.cpp */,
-				7A2E3CA22CB8E468002A139B /* test.hpp */,
 			);
 			path = Project3;
 			sourceTree = "<group>";

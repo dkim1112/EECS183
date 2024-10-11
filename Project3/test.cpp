@@ -10,7 +10,7 @@
  * This is the test file to check if all the functions implemented work as expected.
  */
 
-#include "test.hpp"
+#include <stdio.h>
 #include "utility.h"
 #include "caesar.h"
 #include "vigenere.h"
@@ -52,9 +52,9 @@ void startTests() {
 // it is just testing out each of the methods written.
 void testToUpperCase() {
     cout << "Testing ToUpperCase()" << endl;
-    cout << "Expected: 'Daniel Kim', Actual: " <<  toUpperCase("DANIEL KIM") << endl;
+    cout << "Expected: 'DANIEL KIM', Actual: " <<  toUpperCase("Daniel Kim") << endl;
     cout << "Expected: 'EECS183', Actual: " << toUpperCase("EECS183") << endl;
-    cout << "Expected: 'Wow!', Actual: " << toUpperCase("WOW!") << endl;
+    cout << "Expected: 'WOW!', Actual: " << toUpperCase("Wow!") << endl;
     return;
 }
 
@@ -71,9 +71,9 @@ void testRemoveNonAlphas() {
 
 void testRemoveDuplicate() {
     cout << "Testing RemoveDuplicate()" << endl;
-    cout << "Expected: zlkae, Actual: " << removeDuplicate("zzllllkkkkaaaeeee")
+    cout << "Expected: 012DA, Actual: " << removeDuplicate("0012DDA")
     << endl;
-    cout << "Expected: daniel, Actual: " << removeDuplicate("daniel")
+    cout << "Expected: DANIEL, Actual: " << removeDuplicate("DDANIEL")
     << endl;
     return;
 }
@@ -91,9 +91,7 @@ void testShiftAlphaCharacter() {
     cout << "Expected: 'u', Actual: " << shiftAlphaCharacter('s', 2) << endl;
     cout << "Expectd: 'h', Actual: " << shiftAlphaCharacter('y', 9) << endl;
     cout << "Expected: 'A', Actual: " << shiftAlphaCharacter('A', 0) << endl;
-    cout << "Expected: 'S', Actual: " << shiftAlphaCharacter('T', 25) << endl 
-    << endl << endl;
-
+    cout << "Expected: 'S', Actual: " << shiftAlphaCharacter('T', 25) << endl;
     cout << "Expected: 'R', Actual: " << shiftAlphaCharacter('B', -10) << endl;
     cout << "Expected: 'a', Actual: " << shiftAlphaCharacter('c', -2) << endl;
     return;
@@ -106,9 +104,8 @@ void testCaesarcipher() {
     cout << "Expected: Cuuj cu qj jxu Tyqw qj 11 f.c., Actual: "
     << caesarCipher("Meet me at the Diag at 11 p.m.", 42, true) << endl;
     
-    cout << "Expected: Meet me at the Diag at 11 p.m." << endl;
-    cout << "Actual  : " << caesarCipher("Cuuj cu qj jxu Tyqw qj 11 f.c.",
-                                         42, false) << endl;
+    cout << "Expected: Meet me at the Diag at 11 p.m., Actual : "
+    << caesarCipher("Cuuj cu qj jxu Tyqw qj 11 f.c.", 42, false) << endl;
     return;
 }
 
@@ -185,12 +182,12 @@ void testPolybiusSquare() {
     char grid[6][6];
     fillGrid(grid, ALNUM);
     cout << "Testing PolybiusSquare()" << endl;
-    cout << "Expected: 1341503 1433100505153031310333 23200305 1503104043" << endl;
-    cout << "Actual  : " << polybiusSquare(grid, "183EECS",
+    cout << "Expected: 341503 1433100505153031310333 23200305 1503104043" << endl;
+    cout << "Actual  : " << polybiusSquare(grid, "183ECS",
                                        "The grasshopper lies heavy", true) << endl;
     
     cout << "Expected: THE GRASSHOPPER LIES HEAVY" << endl;
-    cout << "Actual  : " << polybiusSquare(grid, "183EECS",
+    cout << "Actual  : " << polybiusSquare(grid, "183ECS",
                        "341503 1433100505153031310333 23200305 1503104043", false) << endl;
     return;
 }
