@@ -4,8 +4,8 @@
  * EECS 183
  * Lab 6: Array exercises
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * Dongeun Kim
+ * dongeunk
  *
  * <#A description of the assignment here#>
  */
