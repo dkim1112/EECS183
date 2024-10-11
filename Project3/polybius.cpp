@@ -2,7 +2,7 @@
  * polybius.cpp
  * Project UID e98fd45ccce9d7195e89e6171a5451f2
  *
- * Dongeun
+ * Dongeun Kim
  * dongeunk
  *
  * EECS 183: Project 3
