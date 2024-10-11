@@ -8,22 +8,19 @@
  * EECS 183: Project 3
  * Fall 2024
  *
- * <#description#>
+ * This is a program that runs Caesar's cipher.
+ * From a given alphabet, we move "key" amount of character to the right/left.
+ * It is known as a substitution cipher, and can be taught of as alphabet rotation.
  */
 
 #include "caesar.h"
 #include <iostream>
 #include <cctype>
 
-//************************************************************************
-// Implement the functions below this line.
-//************************************************************************
-
 char shiftAlphaCharacter(char c, int n) {
-    // TODO: implement
     char afterShift;
     
-    // Given that we only consider alphabets.
+    // Given the condition to only consider alphabets.
     // If between the range a ~ z.
     if (c >= 'a' && c <= 'z') {
         afterShift = ((c - 'a' + n) % 26) + 'a';
@@ -45,37 +42,37 @@ char shiftAlphaCharacter(char c, int n) {
 
 
 string caesarCipher(string original, int key, bool encrypt) {
-    // TODO: implement
     string result = "";
     
     // Turn to encrypted version.
     if (encrypt) {
-        for (int i=0; i<original.length(); i++) {
+        for (int i = 0; i < original.length(); i++) {
+            // Changing the alphabets for all of them, iterating with a for-loop.
             if (isalpha((original.at(i)))) {
                 result += shiftAlphaCharacter(original.at(i), key);
             }
+            // If not an alphabet, nothing changes.
             else {
                 result += original.at(i);
             }
         }
     }
-    
-    // Turn to original version. (un-encrypt)
-    else {
-        key = -1 * key;
-        for (int i=0; i<original.length(); i++) {
-            if (isalpha((original.at(i)))) {
-                result += shiftAlphaCharacter(original.at(i), key);
-            }
-            else {
-                result += original.at(i);
-            }
-        }
-        
-    }
-    
-    return result;
 
+    // Turn to original version. (decrypt)
+    else {
+        // By negating, switch the direction of rotation.
+        key = -1 * key;
+        
+        for (int i = 0; i < original.length(); i++) {
+            if (isalpha((original.at(i)))) {
+                result += shiftAlphaCharacter(original.at(i), key);
+            }
+            else {
+                result += original.at(i);
+            }
+        }
+    }
+    return result;
 }
 
 

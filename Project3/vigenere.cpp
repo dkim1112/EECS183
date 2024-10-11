@@ -8,7 +8,9 @@
  * EECS 183: Project 3
  * Fall 2024
  *
- * <#description#>
+ * This is a program that runs Vigenere's cipher.
+ * It utilizes a keyword and based on that,
+ * determines the rotation amount for each character.
  */
 
 #include "utility.h"
@@ -17,54 +19,53 @@
 #include <iostream>
 #include <cctype>
 
-//************************************************************************
-// Implement the functions below this line.
-//************************************************************************
-
 string vigenereCipher(string original, string keyword, bool encrypt) {
-    // TODO: implement
-    
-    string newOriginal = removeNonAlphas(original);
+    // To keep track of the keyword index.
     int counter = 0;
     string result = "";
 
-    // Converting all letters in keywords to upper case.
-    string newKeyword = removeNonAlphas(keyword);
-    for (int i=0; i<newKeyword.length(); i++) {
-        newKeyword.at(i) = toupper(newKeyword.at(i));
+    // Convert the keyword to uppercase w/o removing non-alphabets.
+    for (int i = 0; i < keyword.length(); i++) {
+        keyword.at(i) = toupper(keyword.at(i));
     }
-    
-    while (counter < newOriginal.length()) {
-        for (int i=0; i<original.length(); i++) {
-            if (isalpha(original.at(i))) {
-                int shifter = newKeyword.at(counter % newKeyword.length()) - 'A';
-                
-                // If upper case character
-                if (isupper(original.at(i))) {
-                    if (encrypt) {
-                        result += ((original.at(i) - 'A' + shifter) % 26) + 'A';
-                    }
-                    else {
-                        result += ((original.at(i) - 'A' - shifter + 26) % 26) + 'A';
 
-                    }
-                }
-            
-                // If lower case character
-                else if (islower(original.at(i))) {
-                    if (encrypt) {
-                        result += ((original.at(i) - 'a' + shifter) % 26) + 'a';
-                    }
-                    else {
-                        result += ((original.at(i) - 'a' - shifter + 26) % 26) + 'a';
-                    }
-                }
+    // Iterate over each character in the original input string.
+    for (int i = 0; i < original.length(); i++) {
+        char currentChar = original.at(i);
+
+        if (isalpha(currentChar)) {
+            // Skip non-alphabetic characters in the keyword.
+            while (!isalpha(keyword[counter % keyword.length()])) {
                 counter++;
-                result += original.at(i);
             }
-            else {
-                result += original.at(i);
+            
+            // Get the corresponding shift amount from the keyword.
+            int shifter = keyword[counter % keyword.length()] - 'A';
+
+            // Encrypt or decrypt the character based on its case (if/else).
+            // If uppercase.
+            if (isupper(currentChar)) {
+                if (encrypt) {
+                    result += ((currentChar - 'A' + shifter) % 26) + 'A';
+                } else {
+                    result += ((currentChar - 'A' - shifter + 26) % 26) + 'A';
+                }
+            } 
+            // If lowercase.
+            else if (islower(currentChar)) {
+                if (encrypt) {
+                    result += ((currentChar - 'a' + shifter) % 26) + 'a';
+                } else {
+                    result += ((currentChar - 'a' - shifter + 26) % 26) + 'a';
+                }
             }
+
+            // Increment the counter only for alphabetic characters.
+            counter++;
+        } 
+        else {
+            // Preserve non-alphabetic characters as they are.
+            result += currentChar;
         }
     }
     return result;

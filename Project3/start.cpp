@@ -15,14 +15,12 @@
 
 using namespace std;
 
-//****************************************************************************
-// Function declarations. Function definitions are in ciphers.cpp and test.cpp
-//****************************************************************************
+// Found in ciphers.cpp
 void ciphers();
+// Found in test.cpp
 void startTests();
 
 int main() {
-    
     cout << "-------------------------------" << endl
          << "EECS 183 Project 3 Menu Options" << endl
          << "-------------------------------" << endl;

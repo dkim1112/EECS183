@@ -14,7 +14,6 @@
 #include <string>
 using namespace std;
 
-
 /*
  * Requires: c is an alphabetical character.
  * Modifies: Nothing.
@@ -25,7 +24,6 @@ using namespace std;
  */
 char shiftAlphaCharacter(char c, int n);
 
-
 /*
  * Requires: Nothing.
  * Modifies: Nothing.
@@ -34,6 +32,5 @@ char shiftAlphaCharacter(char c, int n);
  *           Caesar cipher using key.
  */
 string caesarCipher(string original, int key, bool encrypt);
-
 
 #endif

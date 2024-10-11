@@ -13,6 +13,7 @@
 		7A2E3C9B2CB5D673002A139B /* ciphers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E3C942CB5D673002A139B /* ciphers.cpp */; };
 		7A2E3C9C2CB5D673002A139B /* vigenere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E3C962CB5D673002A139B /* vigenere.cpp */; };
 		7A2E3C9D2CB5D673002A139B /* polybius.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E3C972CB5D673002A139B /* polybius.cpp */; };
+		7A2E3CA32CB8E468002A139B /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A2E3CA12CB8E468002A139B /* test.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,8 @@
 		7A2E3C952CB5D673002A139B /* caesar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = caesar.h; sourceTree = "<group>"; };
 		7A2E3C962CB5D673002A139B /* vigenere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vigenere.cpp; sourceTree = "<group>"; };
 		7A2E3C972CB5D673002A139B /* polybius.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = polybius.cpp; sourceTree = "<group>"; };
+		7A2E3CA12CB8E468002A139B /* test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
+		7A2E3CA22CB8E468002A139B /* test.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = test.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				7A2E3C922CB5D673002A139B /* utility.h */,
 				7A2E3C962CB5D673002A139B /* vigenere.cpp */,
 				7A2E3C902CB5D673002A139B /* vigenere.h */,
+				7A2E3CA12CB8E468002A139B /* test.cpp */,
+				7A2E3CA22CB8E468002A139B /* test.hpp */,
 			);
 			path = Project3;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				7A2E3C982CB5D673002A139B /* start.cpp in Sources */,
 				7A2E3C9D2CB5D673002A139B /* polybius.cpp in Sources */,
 				7A2E3C9A2CB5D673002A139B /* caesar.cpp in Sources */,
+				7A2E3CA32CB8E468002A139B /* test.cpp in Sources */,
 				7A2E3C9C2CB5D673002A139B /* vigenere.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

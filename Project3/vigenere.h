@@ -14,7 +14,6 @@
 #include <string>
 using namespace std;
 
-
 /*
  * Requires: keyword contains at least one alphabetical character.
  * Modifies: Nothing.
@@ -23,7 +22,6 @@ using namespace std;
  *           original string decrypted with Vigenere cipher using keyword.
  */
 string vigenereCipher(string original, string keyword, bool encrypt);
-
 
 #endif
 

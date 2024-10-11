@@ -15,7 +15,6 @@
 #include <string>
 using namespace std;
 
-
 /*
  * Requires: key does not contain duplicate characters and consists of only
  *           uppercase alphabet and/or digits from 0 to 9.

@@ -14,10 +14,8 @@
 #include <string>
 using namespace std;
 
-
 const int SIZE = 6;
 const string ALNUM = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
 
 /*
  * Requires: Nothing.
@@ -27,7 +25,6 @@ const string ALNUM = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
  *           symbols, spaces, punctuation marks, etc.) are unchanged.
  */
 string toUpperCase(string original);
-
 
 /*
  * Requires: Nothing.
@@ -40,8 +37,6 @@ string toUpperCase(string original);
  */
 string removeNonAlphas(string original);
 
-
-
 /*
  * Requires: original is a character representing a number from 0 to 9.
  * Modifies: Nothing.
@@ -50,7 +45,6 @@ string removeNonAlphas(string original);
  *     Example: charToInt('1') returns the integer 1
  */
 int charToInt(char original);
-
 
 /*
  * Requires: original contains only uppercase alphabet and/or digits from 0 to 9
@@ -68,6 +62,5 @@ string removeDuplicate(string original);
  * Effects:  Prints the grid.
  */
 void printGrid(const char grid[SIZE][SIZE]);
-
 
 #endif
