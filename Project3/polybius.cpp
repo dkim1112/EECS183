@@ -74,7 +74,8 @@ string polybiusSquare(char grid[SIZE][SIZE], string key,
     // Encrypt Option
     if (encrypt) {
         for (int i = 0; i < original.length(); i++) {
-            // Taking white spaces into consideration, since they are allowed too.
+            // Taking white spaces into consideration, 
+            // since they are allowed too.
             // White spaces aren't changed in the final output.
             if (isspace(original.at(i))) {
                 output += " ";
@@ -87,7 +88,8 @@ string polybiusSquare(char grid[SIZE][SIZE], string key,
     }
     // Decrypt Option
     else {
-        // original.size() - 1 because the col takes one additional index each time.
+        // original.size() - 1 because the col takes one 
+        // additional index each time.
         for (int i = 0; i < original.size() - 1; i+=2) {
             if (isspace(original.at(i))) {
                 output += " ";

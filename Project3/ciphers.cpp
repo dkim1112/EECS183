@@ -120,7 +120,8 @@ void ciphers() {
                 
                 // Checking if the string is only composed of alphabets, numbers, spaces.
                 for (int i = 0; i < original.length(); i++) {
-                    if ((isalpha(original.at(i)) || isdigit(original.at(i)) || isspace(original.at(i)))) {
+                    if ((isalpha(original.at(i)) || 
+                         isdigit(original.at(i)) || isspace(original.at(i)))) {
                         isStr = true;
                     }
                     else {
@@ -134,7 +135,8 @@ void ciphers() {
                     getline(cin, key_polybius);
                     
                     for (int i = 0; i < key_polybius.length(); i++) {
-                        if (!isalpha(key_polybius.at(i)) && !isdigit(key_polybius.at(i))) {
+                        if (!isalpha(key_polybius.at(i)) && 
+                            !isdigit(key_polybius.at(i))) {
                             // Set keyCond to false if any invalid character is found.
                             keyCond = false;
                             break;
@@ -148,11 +150,13 @@ void ciphers() {
                         }
                         if (encDec == "ENCRYPT" || encDec == "E") {
                             cout << "The encrypted message is: ";
-                            cout << polybiusSquare(grid, key_polybius, original, 1) << endl;
+                            cout << polybiusSquare(grid, 
+                                    key_polybius, original, 1) << endl;
                         }
                         else {
                             cout << "The decrypted message is: ";
-                            cout << polybiusSquare(grid, key_polybius, original, 0) << endl;
+                            cout << polybiusSquare(grid, 
+                                    key_polybius, original, 0) << endl;
                         }
                     }
                     else {

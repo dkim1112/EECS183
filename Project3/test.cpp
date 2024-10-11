@@ -48,21 +48,25 @@ void startTests() {
     return;
 }
 
+
 // From here to the very bottom of the program,
 // it is just testing out each of the methods written.
 void testToUpperCase() {
     cout << "Testing ToUpperCase()" << endl;
-    cout << "Expected: 'DANIEL KIM', Actual: " <<  toUpperCase("Daniel Kim") << endl;
-    cout << "Expected: 'EECS183', Actual: " << toUpperCase("EECS183") << endl;
-    cout << "Expected: 'WOW!', Actual: " << toUpperCase("Wow!") << endl;
+    cout << "Expected: 'DANIEL KIM', Actual: " <<
+    toUpperCase("Daniel Kim") << endl;
+    cout << "Expected: 'EECS183', Actual: " << 
+    toUpperCase("EECS183") << endl;
+    cout << "Expected: 'WOW!', Actual: " << 
+    toUpperCase("Wow!") << endl;
     return;
 }
 
 
 void testRemoveNonAlphas() {
     cout << "Testing RemoveNonAlphas()" << endl;
-    cout << "Expected: 'ABCDSEF', Actual: " << removeNonAlphas("123123123ABCDSEF")
-    << endl;
+    cout << "Expected: 'ABCDSEF', Actual: " << 
+    removeNonAlphas("123123123ABCDSEF") << endl;
     cout << "Expected: 'AbCdE', Actual: "
     << removeNonAlphas("AbC123d1E!!!!#.4 12345 3#3@!") << endl;
     return;
@@ -71,29 +75,36 @@ void testRemoveNonAlphas() {
 
 void testRemoveDuplicate() {
     cout << "Testing RemoveDuplicate()" << endl;
-    cout << "Expected: 012DA, Actual: " << removeDuplicate("0012DDA")
-    << endl;
-    cout << "Expected: DANIEL, Actual: " << removeDuplicate("DDANIEL")
-    << endl;
+    cout << "Expected: 012DA, Actual: " << 
+    removeDuplicate("0012DDA") << endl;
+    cout << "Expected: DANIEL, Actual: " <<
+    removeDuplicate("DDANIEL") << endl;
     return;
 }
 
 
 void testCharToInt() {
     cout << "Testing CharToInt()" << endl;
-    cout << "Expected: '5', Actual: " << charToInt('5') << endl;
+    cout << "Expected: '5', Actual: " << 
+    charToInt('5') << endl;
     return;
 }
 
 
 void testShiftAlphaCharacter() {
     cout << "Testing ShiftAlphaCharacter()" << endl;
-    cout << "Expected: 'u', Actual: " << shiftAlphaCharacter('s', 2) << endl;
-    cout << "Expectd: 'h', Actual: " << shiftAlphaCharacter('y', 9) << endl;
-    cout << "Expected: 'A', Actual: " << shiftAlphaCharacter('A', 0) << endl;
-    cout << "Expected: 'S', Actual: " << shiftAlphaCharacter('T', 25) << endl;
-    cout << "Expected: 'R', Actual: " << shiftAlphaCharacter('B', -10) << endl;
-    cout << "Expected: 'a', Actual: " << shiftAlphaCharacter('c', -2) << endl;
+    cout << "Expected: 'u', Actual: " << 
+    shiftAlphaCharacter('s', 2) << endl;
+    cout << "Expectd: 'h', Actual: " << 
+    shiftAlphaCharacter('y', 9) << endl;
+    cout << "Expected: 'A', Actual: " << 
+    shiftAlphaCharacter('A', 0) << endl;
+    cout << "Expected: 'S', Actual: " << 
+    shiftAlphaCharacter('T', 25) << endl;
+    cout << "Expected: 'R', Actual: " << 
+    shiftAlphaCharacter('B', -10) << endl;
+    cout << "Expected: 'a', Actual: " << 
+    shiftAlphaCharacter('c', -2) << endl;
     return;
 }
 
@@ -117,7 +128,8 @@ void testVigenereCipher() {
                       , "Mischief managed.", true) << endl;
     
     cout << "Expected: I don't go looking for trouble. Trouble usually finds me., Actual: "
-    << vigenereCipher("U lgp'a os qaoxitk iaz ltvcfqq. Teoafoq ckwhtpd riady qh.", "Mischief managed.", false)
+    << vigenereCipher("U lgp'a os qaoxitk iaz ltvcfqq. Teoafoq ckwhtpd riady qh."
+                      , "Mischief managed.", false)
     << endl;
     return;
 }
@@ -184,7 +196,7 @@ void testPolybiusSquare() {
     cout << "Testing PolybiusSquare()" << endl;
     cout << "Expected: 341503 1433100505153031310333 23200305 1503104043" << endl;
     cout << "Actual  : " << polybiusSquare(grid, "183ECS",
-                                       "The grasshopper lies heavy", true) << endl;
+                        "The grasshopper lies heavy", true) << endl;
     
     cout << "Expected: THE GRASSHOPPER LIES HEAVY" << endl;
     cout << "Actual  : " << polybiusSquare(grid, "183ECS",

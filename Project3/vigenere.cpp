@@ -46,17 +46,21 @@ string vigenereCipher(string original, string keyword, bool encrypt) {
             // If uppercase.
             if (isupper(currentChar)) {
                 if (encrypt) {
-                    result += ((currentChar - 'A' + shifter) % 26) + 'A';
+                    result += ((currentChar - 'A' + 
+                                shifter) % 26) + 'A';
                 } else {
-                    result += ((currentChar - 'A' - shifter + 26) % 26) + 'A';
+                    result += ((currentChar - 'A' - 
+                                shifter + 26) % 26) + 'A';
                 }
             } 
             // If lowercase.
             else if (islower(currentChar)) {
                 if (encrypt) {
-                    result += ((currentChar - 'a' + shifter) % 26) + 'a';
+                    result += ((currentChar - 'a' + 
+                                shifter) % 26) + 'a';
                 } else {
-                    result += ((currentChar - 'a' - shifter + 26) % 26) + 'a';
+                    result += ((currentChar - 'a' - 
+                                shifter + 26) % 26) + 'a';
                 }
             }
 
