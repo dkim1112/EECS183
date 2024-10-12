@@ -196,7 +196,7 @@ void testPolybiusSquare() {
     cout << "Testing PolybiusSquare()" << endl;
     cout << "Expected: 341503 1433100505153031310333 23200305 1503104043" << endl;
     cout << "Actual  : " << polybiusSquare(grid, "183ECS",
-                        "The grasshopper lies heavy", true) << endl;
+                        "THE GRASSHOPPER LIES HEAVY", true) << endl;
     
     cout << "Expected: THE GRASSHOPPER LIES HEAVY" << endl;
     cout << "Actual  : " << polybiusSquare(grid, "183ECS",
