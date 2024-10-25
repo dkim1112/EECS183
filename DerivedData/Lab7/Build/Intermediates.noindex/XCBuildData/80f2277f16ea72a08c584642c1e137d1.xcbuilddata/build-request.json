@@ -1,0 +1,58 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildAndRun"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "a7d7b223f129242f2f1503b4b2a81a70052670ef6633ac40e7931795601e5d9f"
+    }
+  ],
+  "containerPath" : "/Users/kde/Documents/EECS/EECS183/Labs/Lab7/Lab7.xcodeproj",
+  "continueBuildingAfterErrors" : false,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx14.5",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "arm64e",
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/kde/Documents/EECS/EECS183/Labs/Lab7/DerivedData/Lab7/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/kde/Documents/EECS/EECS183/Labs/Lab7/DerivedData/Lab7/Build/Products",
+      "derivedDataPath" : "/Users/kde/Documents/EECS/EECS183/Labs/Lab7/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/kde/Documents/EECS/EECS183/Labs/Lab7/DerivedData/Lab7/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/kde/Documents/EECS/EECS183/Labs/Lab7/DerivedData/Lab7/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/kde/Documents/EECS/EECS183/Labs/Lab7/DerivedData/Lab7/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}
