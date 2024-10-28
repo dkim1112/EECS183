@@ -19,9 +19,11 @@
 #include <cmath>
 using namespace std;
 
+// Default constructor.
 Triangle::Triangle() {
 }
 
+// Overloaded constructor.
 Triangle::Triangle(Point pt1, Color color1,
                    Point pt2, Color color2,
                    Point pt3, Color color3) {
@@ -33,65 +35,82 @@ Triangle::Triangle(Point pt1, Color color1,
     vertexThreeColor = color3;
 }
 
+// Setting the color of the triangle, 
+// for each 3 of the vertex.
 void Triangle::setColor(Color color) {
     vertexOneColor = color;
     vertexTwoColor = color;
     vertexThreeColor = color;
 }
 
+// Setting point of vertexOne.
 void Triangle::setVertexOne(Point pt) {
     vertexOne = pt;
 }
 
+// Getting value of vertexOne.
 Point Triangle::getVertexOne() {
     return vertexOne;
 }
 
+// Setting color of vertexOne.
 void Triangle::setVertexOneColor(Color color) {
     vertexOneColor = color;
 }
 
+// Getting color of vertexOne.
 Color Triangle::getVertexOneColor() {
     return vertexOneColor;
 }
 
+// Setting point of vertexTwo.
 void Triangle::setVertexTwo(Point pt) {
     vertexTwo = pt;
 }
 
+// Getting value of vertexTwo.
 Point Triangle::getVertexTwo() {
     return vertexTwo;
 }
 
+// Setting color of vertexTwo.
 void Triangle::setVertexTwoColor(Color color) {
     vertexTwoColor = color;
 }
 
+// Getting color of vertexTwo.
 Color Triangle::getVertexTwoColor() {
     return vertexTwoColor;
 }
 
+// Setting point of vertexThree.
 void Triangle::setVertexThree(Point pt) {
     vertexThree = pt;
 }
 
+// Getting value of vertexThree.
 Point Triangle::getVertexThree() {
     return vertexThree;
 }
 
+// Setting color of vertexThree.
 void Triangle::setVertexThreeColor(Color color) {
     vertexThreeColor = color;
 }
 
+// Getting color of vertexTwo.
 Color Triangle::getVertexThreeColor() {
     return vertexThreeColor;
 }
 
+// Reading in values of all the 
+// 3 vertex and its colors of the triangle.
 void Triangle::read(istream& ins) {
     ins >> vertexOne >> vertexOneColor >> vertexTwo
      >> vertexTwoColor >> vertexThree >> vertexThreeColor;
 }
 
+// Printing out those values that describes the triangle.
 void Triangle::write(ostream& outs) {
     outs << vertexOne << " " << vertexOneColor <<
     " " << vertexTwo << " " << vertexTwoColor <<

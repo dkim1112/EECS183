@@ -23,8 +23,11 @@
 
 using namespace std;
 
+// Initializing all the elements in the 2D-array pixelData to color black.
 void Graphics::initArray() {
     Color black;
+
+    // DIMENSION is a const declared in utility.h
     for (int i = 0; i < DIMENSION; i++) {
         for (int j = 0; j < DIMENSION; j++) {
             pixelData[i][j] = black;
@@ -32,15 +35,20 @@ void Graphics::initArray() {
     }
 }
 
+// Default constructor.
 Graphics::Graphics() {
     initArray();
 }
 
+// Resetting the pixelData array through initArray method.
 void Graphics::clear() {
     initArray();
 }
 
+// Setting a particular pixel to a certain color.
 void Graphics::setPixel(int x, int y, Color col) {
+    // Checking if the pixel selected is actually 
+    // within the boundary of the pixelData 2D array.
     if ((x >= 0 && x < DIMENSION) && (y >= 0 && y < DIMENSION)) {
         pixelData[y][x] = col;
     }

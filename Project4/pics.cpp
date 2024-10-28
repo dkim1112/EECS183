@@ -140,12 +140,15 @@ void writeFile(const Graphics& drawer)
 {
     string fileName;
     cin >> fileName;
+
+    // concatenating the file received to a bmp file.
     fileName += ".bmp";
 
     drawer.writeFile(fileName);
     cout << "[Wrote " << fileName << "]" << endl;
 }
 
+// Loading the file (opening).
 void loadFile(Graphics& drawer)
 {
     ifstream inFS;
@@ -177,6 +180,8 @@ void loadFile(Graphics& drawer)
             inFS >> rectangle;
             rectangle.draw(drawer);
         }
+        // If the character was none of L, C, T, R
+        // Meaning invalid command.
         else {
             drawer.clear();
             cout << "[Error in input file: " << shape << "]" << endl;
@@ -189,6 +194,8 @@ void loadFile(Graphics& drawer)
     cout << "[Loaded " << file << "]" << endl;
 }
 
+// Returns str with all of its 
+// alphabetical characters lowercased.
 string tolower(string str)
 {
     for (int i = 0; i < str.length(); i++) {

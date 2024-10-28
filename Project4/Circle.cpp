@@ -20,44 +20,59 @@
 #include <algorithm>
 using namespace std;
 
+// Default constructor for Circle class, not receiving any parameters.
 Circle::Circle() {
 }
 
+// Overloaded constructor.
 Circle::Circle(Point pt, int r, Color c) {
     center = pt;
     radius = checkRadius(r);
     color = c;
 }
 
+// A type of a setter function, receiving an input through parameter and
+// giving a new value to the variable center.
+// For the remainder of this program, same applies for setter.
 void Circle::setCenter(Point pt) {
     center = pt;
 }
 
+// A type of a getter function, simply returning an output
+// that is requested, also by ensuring the return type matches
+// with the variable. For the remainder of this program,
+// same applies for getter.
 Point Circle::getCenter() {
     return center;
 }
 
+// Setting radius to a new value r.
 void Circle::setRadius(int r) {
     radius = checkRadius(r);
 }
 
+// Returning the value of the radius.
 int Circle::getRadius() {
     return radius;
 }
 
+// Setting color to a new color c.
 void Circle::setColor(Color c) {
     color = c;
 }
 
+// Returning what color the circle is.
 Color Circle::getColor() {
     return color;
 }
 
+// Reading in the file.
 void Circle::read(istream& ins) {
     ins >> center >> radius >> color;
     radius = checkRadius(radius);
 }
 
+// Printing out the values in a form of center radius color.
 void Circle::write(ostream& outs) {
     outs << center << " " << radius << " " << color;
 }

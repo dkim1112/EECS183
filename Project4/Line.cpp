@@ -16,46 +16,57 @@
 #include "Line.h"
 #include "Graphics.h"
 
+// Default constructor.
 Line::Line() {
     start = Point();
     end = Point();
     lineColor = Color();
 }
 
+// Overloaded constructor.
 Line::Line(Point pt1, Point pt2, Color color) {
     start = pt1;
     end = pt2;
     lineColor = color;
 }
 
+// Setting starting point of the line to a certain point.
 void Line::setStart(Point pt) {
     start = pt;
 }
 
+// Getting the start point of line.
 Point Line::getStart() {
     return start;
 }
 
+// Setting ending point of the line to a certain point.
 void Line::setEnd(Point pt) {
     end = pt;
 }
 
+// Getting the end point of line.
 Point Line::getEnd() {
     return end;
 }
 
+// Setting the line color to color.
 void Line::setColor(Color color) {
     lineColor = color;
 }
 
+// Getting the color of the line.
 Color Line::getColor() {
     return lineColor;
 }
 
+// Reading in the file and retrieving 
+// values of start and end through istream.
 void Line::read(istream& ins) {
     ins >> start >> end >> lineColor;
 }
 
+// Printing out the values in start end lineColor format.
 void Line::write(ostream& outs) {
     outs << start << " " << end << " " << lineColor;
 }

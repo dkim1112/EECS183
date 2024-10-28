@@ -20,9 +20,11 @@
 #include <algorithm>
 using namespace std;
 
+// Default constructor.
 Rectangle::Rectangle() {
 }
 
+// Overloaded constructor.
 Rectangle::Rectangle(Point pt1, Point pt2, Color cTopLeft, 
                     Color cTopRight, Color cBottomRight, 
                     Color cBottomLeft) {
@@ -34,22 +36,27 @@ Rectangle::Rectangle(Point pt1, Point pt2, Color cTopLeft,
     colorBottomLeft = cBottomLeft;
 }
 
+// Setting the starting point of the rectangle.
 void Rectangle::setStart(Point pt) {
     start = pt;
 }
 
+// Getting start value.
 Point Rectangle::getStart() {
     return start;
 }
 
+// Setting the ending point of the rectangle.
 void Rectangle::setEnd(Point pt) {
     end = pt;
 }
 
+// Getting end value.
 Point Rectangle::getEnd() {
     return end;
 }
 
+// Setting the color of the rectangle.
 void Rectangle::setColor(Color color) {
     colorTopLeft = color;
     colorTopRight = color;
@@ -57,38 +64,47 @@ void Rectangle::setColor(Color color) {
     colorBottomLeft = color;
 }
 
+// Setting the top left color of the rectangle.
 void Rectangle::setColorTopLeft(Color color) {
     colorTopLeft = color;
 }
 
+// Getting top left color value.
 Color Rectangle::getColorTopLeft() {
     return colorTopLeft;
 }
 
+// Setting the top right color of the rectangle.
 void Rectangle::setColorTopRight(Color color) {
     colorTopRight= color;
 }
 
+// Getting top right color value.
 Color Rectangle::getColorTopRight() {
     return colorTopRight;
 }
 
+// Setting the bottom right color of the rectangle.
 void Rectangle::setColorBottomRight(Color color) {
     colorBottomRight = color;
 }
 
+// Getting bottom right color value.
 Color Rectangle::getColorBottomRight() {
     return colorBottomRight;
 }
 
+// Setting the bottom left color of the rectangle.
 void Rectangle::setColorBottomLeft(Color color) {
     colorBottomLeft = color;
 }
 
+// Getting bottom left color value.
 Color Rectangle::getColorBottomLeft() {
     return colorBottomLeft;
 }
 
+// Reading in the file in a certain order written below.
 void Rectangle::read(istream& ins) {
     ins >> start >> end >> colorTopLeft >> colorTopRight
         >> colorBottomRight >> colorBottomLeft;
@@ -101,6 +117,7 @@ void Rectangle::read(istream& ins) {
     }
 }
 
+// Printing out all the values.
 void Rectangle::write(ostream& outs) {
     outs << " " << start << " " << end << " " 
     << colorTopLeft << " " << colorTopRight 

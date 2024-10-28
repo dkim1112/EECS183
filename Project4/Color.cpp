@@ -14,6 +14,9 @@
 
 #include "Color.h"
 
+// Checking if the color (RGB) is in the valid range.
+// If not, either assign 0 or 255 depending on where
+// the number is closer to.
 int Color::checkRange(int val) {
     if ((val >= 0) && (val <= 255)) {
         return val;
@@ -26,52 +29,64 @@ int Color::checkRange(int val) {
     }
 }
 
+// Default constructor, initializing red, green, blue to 0's.
 Color::Color() {
    red = 0;
    green = 0;
    blue = 0;
 }
 
+// Overloaded constructor.
 Color::Color(int rV, int gV, int bV) {
    red = checkRange(rV);
    green = checkRange(gV);
    blue = checkRange(bV);
 }
 
+// Setting color to a different red.
 void Color::setRed(int rV) {
    red = checkRange(rV);
 }
 
+// Printing out red.
 int Color::getRed() {
    return red;
 }
 
+// Setting color to a different green.
 void Color::setGreen(int gV) {
    green = checkRange(gV);
 }
 
+// Printing out green.
 int Color::getGreen() {
    return green;
 }
 
+// Setting color to a different blue.
 void Color::setBlue(int bV) {
    blue = checkRange(bV);
 }
 
+// Printing out blue.
 int Color::getBlue() {
    return blue;
 }
 
+// Reading in the 3 different colors for file.
 void Color::read(istream& ins) {
    int redRed, blueBlue, greenGreen;
     
    // >> automatically ignores spaces (" ")
    ins >> redRed >> greenGreen >> blueBlue;
+
+   // Using setter, giving each red, green, and blue certain values.
    setRed(redRed);
    setGreen(greenGreen);
    setBlue(blueBlue);
 }
 
+// Printing the output in red green blue format.
 void Color::write(ostream& outs) {
     outs << red << " " << green << " " << blue;
 }

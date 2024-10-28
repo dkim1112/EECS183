@@ -17,28 +17,34 @@
 // for the declaration of DIMENSION
 #include "utility.h"
 
+// Default constructor.
 Point::Point() {
     x = 0;
     y = 0;
 }
 
+// Overloaded constructor.
 Point::Point(int xVal, int yVal) {
     x = checkRange(xVal);
     y = checkRange(yVal);
 }
 
+// Setting x-value of the point to xVal.
 void Point::setX(int xVal) {
     x = checkRange(xVal);
 }
 
+// Getting x-value of the point.
 int Point::getX() {
     return x;
 }
 
+// Setting y-value of the point to yVal.
 void Point::setY(int yVal) {
     y = checkRange(yVal);
 }
 
+// Getting y-value of the point.
 int Point::getY() {
     return y;
 }
@@ -56,6 +62,7 @@ int Point::checkRange(int val) {
     }
 }
 
+// Processing/reading in the value in the format listed below.
 void Point::read(istream& ins) {
     char leftParen, comma, rightParen;
     int xVal, yVal;
@@ -69,10 +76,14 @@ void Point::read(istream& ins) {
         return;
     }
     
+    // Must check that the x-value and y-value
+    // are within the range, which is 
+    // 0 or greater && less than the DIMENSION.
     x = checkRange(xVal);
     y = checkRange(yVal);
 }
 
+// Printing out the x and y value of the point.
 void Point::write(ostream& outs) {
     outs << '(' << x << ',' << y << ')';
 }
