@@ -23,10 +23,29 @@
 using namespace std;
 
 // TODO: implement constructor, clear, setPixel, initArray.
+void Graphics::initArray() {
+    Color black;
+    for (int i=0; i<DIMENSION; i++) {
+        for (int j=0; j<DIMENSION; j++) {
+            pixelData[i][j] = black;
+        }
+    }
+}
 
+Graphics::Graphics() {
+    initArray();
+}
 
+void Graphics::clear() {
+    initArray();
+}
 
-// Your code goes above this line.
+void Graphics::setPixel(int x, int y, Color col) {
+    if ((x >= 0 && x < DIMENSION) && (y >= 0 && y < DIMENSION)) {
+        pixelData[y][x] = col;
+    }
+}
+
 // Don't change the implementation below!
 
 void Graphics::writeFile(string fileName) const

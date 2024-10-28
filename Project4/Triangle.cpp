@@ -23,7 +23,85 @@ using namespace std;
 //       getVertexTwoColor, setVertexThreeColor, getVertexThreeColor,
 //       read, write.
 
+Triangle::Triangle() {
+}
 
+Triangle::Triangle(Point pt1, Color color1,
+                   Point pt2, Color color2,
+                   Point pt3, Color color3) {
+    vertexOne = pt1;
+    vertexTwo = pt2;
+    vertexThree = pt3;
+    vertexOneColor = color1;
+    vertexTwoColor = color2;
+    vertexThreeColor = color3;
+}
+
+void Triangle::setColor(Color color) {
+    vertexOneColor = color;
+    vertexTwoColor = color;
+    vertexThreeColor = color;
+}
+
+void Triangle::setVertexOne(Point pt) {
+    vertexOne = pt;
+}
+
+Point Triangle::getVertexOne() {
+    return vertexOne;
+}
+
+void Triangle::setVertexOneColor(Color color) {
+    vertexOneColor = color;
+}
+
+Color Triangle::getVertexOneColor() {
+    return vertexOneColor;
+}
+
+void Triangle::setVertexTwo(Point pt) {
+    vertexTwo = pt;
+}
+
+Point Triangle::getVertexTwo() {
+    return vertexTwo;
+}
+
+void Triangle::setVertexTwoColor(Color color) {
+    vertexTwoColor = color;
+}
+
+Color Triangle::getVertexTwoColor() {
+    return vertexTwoColor;
+}
+
+void Triangle::setVertexThree(Point pt) {
+    vertexThree = pt;
+}
+
+Point Triangle::getVertexThree() {
+    return vertexThree;
+}
+
+void Triangle::setVertexThreeColor(Color color) {
+    vertexThreeColor = color;
+}
+
+Color Triangle::getVertexThreeColor() {
+    return vertexThreeColor;
+}
+
+void Triangle::read(istream& ins) {
+    ins >> vertexOne >> vertexOneColor >> vertexTwo
+     >> vertexTwoColor >> vertexThree >> vertexThreeColor;
+
+}
+
+void Triangle::write(ostream& outs) {
+    outs << vertexOne << " " << vertexOneColor <<
+    " " << vertexTwo << " " << vertexTwoColor <<
+    " " << vertexThree << " " << vertexThreeColor;
+}
 
 // Your code goes above this line.
 // Don't change the implementations below!
