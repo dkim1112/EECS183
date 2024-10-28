@@ -9,7 +9,7 @@
  * <dongeunk>
  *
  * <This class is all about the shape rectangle. It performs operations 
- * such as setting the color of the rectangle, getting the star and 
+ * such as setting the color of the rectangle, getting the start and 
  * end value, and more.>
  */
 

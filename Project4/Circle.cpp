@@ -55,6 +55,7 @@ Color Circle::getColor() {
 
 void Circle::read(istream& ins) {
     ins >> center >> radius >> color;
+    radius = checkRadius(radius);
 }
 
 void Circle::write(ostream& outs) {
