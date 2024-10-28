@@ -5,16 +5,15 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * <Dongeun Kim>
+ * <dongeunk>
  *
- * <#Description#>
+ * <This class is all about the colors (RGB). It can manipulate red, green,
+ * and blue to our needs. It also checks if it is a valid color.>
  */
 
 #include "Color.h"
 
-// TODO: implement first checkRange, then two constructors, setRed, getRed,
-//       setGreen, getGreen, setBlue, getBlue, read, write.
 int Color::checkRange(int val) {
     if ((val >= 0) && (val <= 255)) {
         return val;
@@ -64,20 +63,18 @@ int Color::getBlue() {
 }
 
 void Color::read(istream& ins) {
-    int red, blue, green;
+   int redRed, blueBlue, greenGreen;
     
-    // >> automatically ignores spaces " "
-    ins >> red >> green >> blue;
-    red = checkRange(red);
-    green = checkRange(green);
-    blue = checkRange(blue);
+   // >> automatically ignores spaces (" ")
+   ins >> redRed >> greenGreen >> blueBlue;
+   setRed(redRed);
+   setGreen(greenGreen);
+   setBlue(blueBlue);
 }
 
 void Color::write(ostream& outs) {
     outs << red << " " << green << " " << blue;
 }
-
-// Don't change the implementations below!
 
 istream& operator >> (istream& ins, Color& color)
 {

@@ -5,10 +5,12 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * <Dongeun Kim>
+ * <dongeunk>
  *
- * <#Description#>
+ * <This class is all about the shape triangle. It performs operations such as
+ * setting the color of the triangle, getting different vertex (3) values,
+ * and more. It can ultimately draw triangles.>
  */
 
 #include "Triangle.h"
@@ -16,12 +18,6 @@
 #include "Shape.h"
 #include <cmath>
 using namespace std;
-
-// TODO: implement two constructors, setColor, setVertexOne, getVertexOne,
-//       setVertexTwo, getVertexTwo, setVertexThree, getVertexThree,
-//       setVertexOneColor, getVertexOneColor, setVertexTwoColor,
-//       getVertexTwoColor, setVertexThreeColor, getVertexThreeColor,
-//       read, write.
 
 Triangle::Triangle() {
 }
@@ -94,7 +90,6 @@ Color Triangle::getVertexThreeColor() {
 void Triangle::read(istream& ins) {
     ins >> vertexOne >> vertexOneColor >> vertexTwo
      >> vertexTwoColor >> vertexThree >> vertexThreeColor;
-
 }
 
 void Triangle::write(ostream& outs) {
@@ -102,9 +97,6 @@ void Triangle::write(ostream& outs) {
     " " << vertexTwo << " " << vertexTwoColor <<
     " " << vertexThree << " " << vertexThreeColor;
 }
-
-// Your code goes above this line.
-// Don't change the implementations below!
 
 istream& operator >> (istream& ins, Triangle& tri)
 {

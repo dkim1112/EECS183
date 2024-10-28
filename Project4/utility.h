@@ -8,7 +8,6 @@
  * declares DIMENSION.
  */
 
-
 #ifndef P4_cool_pics_utility_h
 #define P4_cool_pics_utility_h
 

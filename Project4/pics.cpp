@@ -5,10 +5,13 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * <Dongeun Kim>
+ * <dongeunk>
  *
- * <#Description#>
+ * <Think of this class as the main palette.
+ * The drawing for different shapes happens here, by loading
+ * and writing on the files. We can also identify what the shape
+ * of the drawing is.>
  */
 
 #include <iostream>
@@ -135,24 +138,65 @@ void coolPics()
 
 void writeFile(const Graphics& drawer)
 {
-    // TODO: implement
-    // This will make use of Graphics::writeFile()
+    string fileName;
+    cin >> fileName;
+    fileName += ".bmp";
+
+    drawer.writeFile(fileName);
+    cout << "[Wrote " << fileName << "]" << endl;
 }
 
 void loadFile(Graphics& drawer)
 {
-    // TODO: implement
+    ifstream inFS;
+    string file = openFile(inFS);
+
+    // Cleaning up the canvas to start from blank.
+    drawer.clear();
+    char shape;
+    
+    // Using first character to determine what shape it is.
+    while (inFS >> shape) {
+        if (shape == 'L') {
+            Line line;
+            inFS >> line;
+            line.draw(drawer);
+        }
+        else if (shape == 'C') {
+            Circle circle;
+            inFS >> circle;
+            circle.draw(drawer);
+        }
+        else if (shape == 'T') {
+            Triangle triangle;
+            inFS >> triangle;
+            triangle.draw(drawer);
+        }
+        else if (shape == 'R') {
+            Rectangle rectangle;
+            inFS >> rectangle;
+            rectangle.draw(drawer);
+        }
+        else {
+            drawer.clear();
+            cout << "[Error in input file: " << shape << "]" << endl;
+            inFS.close();
+            return;
+        }
+    }
+
+    inFS.close();
+    cout << "[Loaded " << file << "]" << endl;
 }
 
 string tolower(string str)
 {
-    // TODO: implement
+    for (int i = 0; i < str.length(); i++) {
+        str.at(i) = tolower(str.at(i));
+    }
 
     return str;
 }
-
-
-// Don't change the implementations below!
 
 void printMenu()
 {

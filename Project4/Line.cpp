@@ -5,17 +5,17 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * <Dongeun Kim>
+ * <dongeunk>
  *
- * <#Description#>
+ * <This class is all about the shape line. It performs operations such as
+ * setting the starting and ending point of a line. It also can assign
+ * color to lines.>
  */
 
 #include "Line.h"
 #include "Graphics.h"
 
-// TODO: implement two Line constructors, setStart, getStart, setEnd,
-//       getEnd, setColor, getColor, read, write.
 Line::Line() {
     start = Point();
     end = Point();
@@ -46,12 +46,10 @@ Point Line::getEnd() {
 
 void Line::setColor(Color color) {
     lineColor = color;
-
 }
 
 Color Line::getColor() {
     return lineColor;
-
 }
 
 void Line::read(istream& ins) {
@@ -61,8 +59,6 @@ void Line::read(istream& ins) {
 void Line::write(ostream& outs) {
     outs << start << " " << end << " " << lineColor;
 }
-
-// Don't change the implementations below!
 
 istream& operator >> (istream& ins, Line& line)
 {

@@ -5,10 +5,12 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * <Dongeun Kim>
+ * <dongeunk>
  *
- * <#Description#>
+ * <As a starter file of this program, it allows the user to choose
+ * whether to test out the functions individually, or actually run the program
+ * to draw shapes.>
  */
 
 #include <iostream>

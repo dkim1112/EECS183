@@ -5,10 +5,11 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * <Dongeun Kim>
+ * <dongeunk>
  *
- * <#Description#>
+ * <This class is a representation of a single coordinate on the image.
+ * It holds values such as the x and y coordinates.>
  */
 
 #include "Point.h"
@@ -16,7 +17,6 @@
 // for the declaration of DIMENSION
 #include "utility.h"
 
-// TODO: implement two constructors, setX, getX, setY, getY, read, write, checkRange.
 Point::Point() {
     x = 0;
     y = 0;
@@ -43,7 +43,7 @@ int Point::getY() {
     return y;
 }
 
-// otherwise returns the closest of 0 and DIMENSION - 1.
+// otherwise returns the closest of 0 OR DIMENSION - 1.
 int Point::checkRange(int val) {
     if ((val >= 0) && (val < DIMENSION)) {
         return val;
@@ -76,9 +76,6 @@ void Point::read(istream& ins) {
 void Point::write(ostream& outs) {
     outs << '(' << x << ',' << y << ')';
 }
-
-// Your code goes above this line.
-// Don't change the implementations below!
 
 istream& operator >> (istream& ins,  Point& pt)
 {

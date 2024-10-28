@@ -5,10 +5,11 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * <Dongeun Kim>
+ * <dongeunk>
  *
- * <#Description#>
+ * <This class is a representation of pixels in an image
+ * that we treat it like a 2D-Array, and assign colors to each boxes.>
  */
 
 #include <iostream>
@@ -22,11 +23,10 @@
 
 using namespace std;
 
-// TODO: implement constructor, clear, setPixel, initArray.
 void Graphics::initArray() {
     Color black;
-    for (int i=0; i<DIMENSION; i++) {
-        for (int j=0; j<DIMENSION; j++) {
+    for (int i = 0; i < DIMENSION; i++) {
+        for (int j = 0; j < DIMENSION; j++) {
             pixelData[i][j] = black;
         }
     }
@@ -45,8 +45,6 @@ void Graphics::setPixel(int x, int y, Color col) {
         pixelData[y][x] = col;
     }
 }
-
-// Don't change the implementation below!
 
 void Graphics::writeFile(string fileName) const
 {

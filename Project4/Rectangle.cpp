@@ -5,10 +5,12 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * <Dongeun Kim>
+ * <dongeunk>
  *
- * <#Description#>
+ * <This class is all about the shape rectangle. It performs operations 
+ * such as setting the color of the rectangle, getting the star and 
+ * end value, and more.>
  */
 
 #include "Rectangle.h"
@@ -18,10 +20,6 @@
 #include <algorithm>
 using namespace std;
 
-// TODO: implement two constructors, setStart, getStart, setEnd, getEnd,
-//       setColor, setColorTopLeft, getColorTopLeft, setColorTopRight,
-//       getColorTopRight, setColorBottomRight, getColorBottomRight,
-//       setColorBottomLeft, getColorBottomLeft, read, write.
 Rectangle::Rectangle() {
 }
 
@@ -108,9 +106,6 @@ void Rectangle::write(ostream& outs) {
     << colorTopLeft << " " << colorTopRight 
     << " " << colorBottomRight << " " << colorBottomLeft;
 }
-
-// Your code goes above this line.
-// Don't change the implementations below!
 
 istream& operator >> (istream& ins, Rectangle& rectangle)
 {

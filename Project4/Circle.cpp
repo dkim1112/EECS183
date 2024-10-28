@@ -5,10 +5,12 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * <Dongeun Kim>
+ * <dongeunk>
  *
- * <#Description#>
+ * <This class is all about the shape circle. It performs operations such as
+ * setting the color of the circle, getting the center value, and more. It
+ * can ultimately draw circles.>
  */
 
 #include "Circle.h"
@@ -18,8 +20,6 @@
 #include <algorithm>
 using namespace std;
 
-// TODO: implement two constructors, setCenter, getCenter, setColor, getColor,
-//       setRadius, getRadius, read, write.
 Circle::Circle() {
 }
 
@@ -60,9 +60,6 @@ void Circle::read(istream& ins) {
 void Circle::write(ostream& outs) {
     outs << center << " " << radius << " " << color;
 }
-
-// Your code goes above this line.
-// Don't change the implementations below!
 
 istream& operator >> (istream& ins, Circle& circle)
 {
