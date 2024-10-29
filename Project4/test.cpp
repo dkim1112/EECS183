@@ -70,93 +70,126 @@ void test_Point() {
 }
 
 void test_Circle() {
-    Color color(0, 255, 0);
-    Point center(4, 4);
-    int r = 2;
-    Circle c1;
-    Circle (center, 5, color);
+    // Default constructor
+    Circle p1;
+    cout << "Expected: (0,0) 0 0 0 0, actual: " << p1 << endl;
+
+    // Non-default constructor
+    Point point1(30, 50);
+    Color color1(235, 240, 120);
+    Circle p2(point1, -25, color1);
+    cout << p2;
+
+    // test of setCenter(), setRadius(), setColor()
+    Point point2(30, 30);
+    Color color2(12, 12, 12);
+    p1.setCenter(point2);
+    p1.setRadius(-5);
+    p1.setColor(color2);
+
+    // test of the getCenter(), getRadius(), getColor()
+    cout << p1.getCenter() << " " << p1.getRadius() << " " << p1.getColor() << endl;
 }
 
 void test_Color() {
+    // Testing color constructors
     Color color;
     Color color2(255, 255, 255);
 
+    // Testing the setter methods of different colors
     color.setRed(22);
     color.setGreen(23);
-    color2.setBlue(55);
+    color.setBlue(635);
 
+    // Testing the getter methods of different colors
     cout << color.getRed() << color.getGreen() << color.getBlue() << endl;
     cin >> color;
     cout << color << endl;
 }
 
 void test_Line() {
-    Color color(255, 0, 0);
-    Point start(1, 2);
-    Point end(3, 4);
-    Line ln;
-    Line ln1(start, end, color);
+cout << "Testing class Line()" << endl;
+    // Default constructor
+    Line p1;
+    cout << "Expected: (0,0) (0,0) 0 0 0, actual: " << p1 << endl;
 
-    Point newStart(5, 5);
-    ln.setStart(newStart);
-    ln.setEnd(newStart);
-    ln.setColor(color);
+    // Non-default constructor
+    Point point1(5, 5);
+    Point point2(20, 20);
+    Color color1(100, 200, 500);
+    Line p2(point1, point2, color1);
+    cout << p2;
 
-    ln1.getStart();
-    ln1.getEnd();
-    ln1.getColor();    
+    // testing setStart(), setEnd() and setColor()
+    Point point3(75, 75);
+    Point point4(99, 105);
+    Color color2(100, 100, 100);
+    p1.setStart(point3);
+    p1.setEnd(point4);
+    p1.setColor(color2);
 
-    ln1.read(cin);
+    // testing getStart(), getEnd(), getColor()
+    cout << p1.getStart() << " " << p1.getEnd() << " " << p1.getColor() << endl;
 }
 
 void test_Rectangle() {
-    Point pt1;
-    Point pt2(12, 10);
-    Point pt3(24, 25);
-    Color color1;
-    Color color2(25, 25, 25);
-    Color color3(1, 2, 3);
-    Color color4(99, 23, 45);
+ cout << "Testing class Rectangle()" << endl;
+    // testing default constructor
+    Rectangle p1;
+    cout << "Expected: (0,0) (0,0) 0 0 0 0 0 0 0 0 0 0 0 0, actual: " << p1 << endl;
 
-    Rectangle rec;
-    Rectangle rec1(pt1, pt2, color1, color2, color3, color4);
+    // test of the non-default constructor
+    Point point1(10, 30);
+    Point point2(30, 40);
+    Color color1(1, 2 ,3);
+    Color color2(4, 5, 6);
+    Color color3(7, 8, 9);
+    Color color4(10, 11, 12);
+    Rectangle p2(point1, point2, color1, color2, color3, color4);
+    cout << "actual: " << p2 << endl;
 
-    rec.setStart(pt3);
-    rec.setEnd(pt3);
-    rec1.setColor(color2);
-    rec1.setColor(color4);
-    rec1.setColorTopLeft(color1);
-    rec1.setColorTopRight(color2);
-    rec1.setColorBottomRight(color3);
-    rec1.setColorBottomLeft(color4);
+    // test of all the set functions
+    Point point3(90, 20);
+    Point point4(45, 29);
+    Color color5(12, 11, 10);
+    Color color6(9, 8, 7);
+    Color color7(6, 5, 4);
+    Color color8(3, 2, 1);
+    p1.setStart(point3);
+    p1.setEnd(point4);
+    p1.setColorTopLeft(color5);
+    p1.setColorTopRight(color6);
+    p1.setColorBottomRight(color7);
+    p1.setColorBottomLeft(color8);
 
-    cout << rec1.getStart() << rec1.getEnd()
-        << rec1.getColorTopLeft() << rec1.getColorBottomRight()
-        << rec1.getColorBottomLeft() << rec1.getColorTopRight();
+    // test of all the get functions
+    cout << "actual: " << p1.getStart() << " " << p1.getEnd() << " " << p1.getColorTopLeft() << " " <<
+        p1.getColorTopRight() << " " << p1.getColorBottomRight() << " " << p1.getColorBottomLeft() << endl;
 }
 
 void test_Triangle() {
-    Point v1(0, 1);
-    Point v2(3, 9);
-    Point v3(23, 1);
-    Color color1(100, 100, 100);
-    Color color2(255, 10, 255);
-    Color color3(10, 10, 10);
-
     Triangle t1;
-    Triangle t3(v1, color1, v2, color2, v3, color3);
+    cout << "Expected: (0,0) 0 0 0 (0,0) 0 0 0 (0,0) 0 0 0, actual: " << t1 << endl;
+
+    // test of the non-default constructor
+    Point v1(30, 45);
+    Point v2(54, 65);
+    Point v3(98, 80);
+    Color color1(0, 0, 255);
+    Color color2(0, 255, 0);
+    Color color3(255, 0, 0);
+    Triangle t2(v1, color1, v2, color2, v3, color3);
+    cout << "actual: " << t2 << endl;
 
     t1.setVertexOne(v1);
     t1.setVertexTwo(v2);
     t1.setVertexThree(v3);
-    t3.setVertexOneColor(color3);
+    t2.setVertexOneColor(color3);
     t1.setVertexTwoColor(color2);
-    t3.setVertexThreeColor(color1);
+    t2.setVertexThreeColor(color1);
 
     cout << t1.getVertexOne() << " " << t1.getVertexOneColor() << " "
         << t1.getVertexTwo() << " " << t1.getVertexTwoColor() << " "
         << t1.getVertexThree() << " " << t1.getVertexThreeColor() << endl;
-
-    t1.read(cin);
 }
 
