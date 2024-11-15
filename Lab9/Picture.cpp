@@ -14,10 +14,11 @@ Picture::Picture() {
 }
 
 int Picture::countBlackPixels() {
-    int count;
+    int count = 0;
+    Color c;
     for (int row = 0; row < DIMENSION; row++) {
         for (int col = 0; col < DIMENSION; col++) {
-            if (canvas[row][col] == Color(0, 0, 0)) {
+            if (canvas[row][col].isBlack()) {
                 count++;
             }
         }
@@ -26,11 +27,11 @@ int Picture::countBlackPixels() {
 }
 
 void Picture::drawPixel(int row, int col, Color pixelColor) {
-    if (row < 0 && row >= DIMENSION && col < 0 && col >= DIMENSION) {
+    if (row < 0 || row >= DIMENSION || col < 0 || col >= DIMENSION) {
         cout << "Out of bounds";
         return;
     }
-    canvas[col][row] = pixelColor;
+    canvas[row][col] = pixelColor;
     return;
 }
 
@@ -38,7 +39,7 @@ void Picture::drawRectangle(int startRow, int startCol,
                             int endRow, int endCol, Color pixelColor) {
     for (int row = startRow; row <= endRow; row++) {
         for (int col = startCol; col <= endCol; col++) {
-            canvas[row][col] = pixelColor;
+            drawPixel(row, col, pixelColor);
         }
     }
     return;
